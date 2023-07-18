@@ -11,33 +11,22 @@ public:
 		std::cout << "Ctor Pile par Default" << std::endl;
 	}
 
-	Pile(const Pile& p_PileACopier)
-		: m_Liste(nullptr)
+	~Pile()
 	{
-		std::cout << "Ctor par Copie Pile" << std::endl;
-		this->m_Liste = new TypeElement[p_PileACopier.m_Liste.capacite()];
-		for (size_t i = 0; i < p_PileACopier.m_Liste.nombreElements(); i++)
+		for (size_t i = this->m_Liste.nombreElements() / 2; i > -1; i++)
 		{
-			this->m_Liste[i] = p_PileACopier.m_Liste[i];
+			int indexFin = this->m_Liste.nombreElements() - i;
+			TypeElement temp = this->m_Liste.obtenir(i);
+			this->m_Liste.definir(i, this->m_Liste.obtenir(indexFin));
+			this->m_Liste.definir(indexFin, temp);
 		}
 	}
 
-	Pile(Pile&& p_PileADeplacer)
-		:m_Liste(p_PileADeplacer.m_Liste)
-	{
-		std::cout << "Ctor par Deplacement Pile" << std::endl;
-		p_PileADeplacer.m_Liste = nullptr;
-	}
-
-	~Pile()
+	Liste<TypeElement> InversePile()
 	{
 		
-	}
-
-	Liste<TypeElement> pileInverse()
-	{
 		Liste<TypeElement> listeInversee;
-		for (size_t i = this->m_Liste.nombreElements() - 1; i > -1; i++)
+		for (size_t i = 0 ; i < this->m_Liste.nombreElements(); i++)
 		{
 			listeInversee.ajouterFin(this->m_Liste.obtenir(i));
 		}
@@ -73,11 +62,7 @@ public:
 
 	bool estPileVide()
 	{
-		if (this->m_Liste.nombreElements == 0)
-		{
-			return true;
-		}
-		return false;
+		return this->m_Liste.nombreElements == 0;
 	}
 	int taille()
 	{
@@ -87,8 +72,11 @@ public:
 
 	template <class TypeElement> friend Pile<TypeElement> operator+(const Pile<TypeElement>& p_pile1, const Pile<TypeElement>& p_pile2);
 	template <class TypeElement> friend Pile<TypeElement> operator+(const Pile<TypeElement>& p_pile, const TypeElement& p_TypeElement);
-	template <class TypeElement> friend Pile<TypeElement>& operator+=(const Pile<TypeElement>& p_pile, const TypeElement& p_TypeElement);
-	template <class TypeElement> friend Pile<TypeElement>& operator+=(const Pile<TypeElement>& p_pile1, const Pile<TypeElement>& p_pile2);
+	template <class TypeElement> friend Pile<TypeElement>& operator+=(Pile<TypeElement>& p_pile, const TypeElement& p_TypeElement);
+	template <class TypeElement> friend Pile<TypeElement>& operator+=(Pile<TypeElement>& p_pile1, const Pile<TypeElement>& p_pile2);
+	template <class TypeElement> friend bool operator==(const Pile<TypeElement>& p_pile1, const Pile<TypeElement>& p_pile2);
+	template <class TypeElement> friend bool operator!=(const Pile<TypeElement>& p_pile1, const Pile<TypeElement>& p_pile2);
+	template <class TypeElement> friend Pile<TypeElement> operator~(const Pile<TypeElement>& p_pile1);
 	template <class TypeElement> friend std::ostream& operator<<(std::ostream& p_ostream, const Pile<TypeElement>& p_pile);
 
 private:

@@ -81,6 +81,38 @@ public:
 		this->m_valeurs[this->m_NbDElements++] = p_valeur;
 	}
 
+	void ajouterDebut(const TypeElement& p_valeur)
+	{
+		if (this->m_NbDElements == this->m_capacite)
+		{
+			this->m_NbDElements++;
+			int futurCapacite = this->m_capacite * 2;
+			TypeElement* futurTableau = new TypeElement[futurCapacite];
+			futurTableau[0] = p_valeur;
+			for (size_t i = 1; i < this->m_NbDElements; i++)
+			{
+				futurTableau[i] = this->m_valeurs[i-1];
+			}
+
+			delete[] this->m_valeurs;
+			this->m_valeurs = futurTableau;
+			this->m_capacite = futurCapacite;
+		}
+		else
+		{
+			this->m_NbDElements++;
+			TypeElement* futurTableau = new TypeElement[this->m_capacite];
+			futurTableau[0] = p_valeur;
+			for (size_t i = 1; i < this->m_NbDElements; i++)
+			{
+				futurTableau[i] = this->m_valeurs[i-1];
+			}
+
+			delete[] this->m_valeurs;
+			this->m_valeurs = futurTableau;
+		}
+	}
+
 	void definir(int p_index, TypeElement p_element)
 	{
 		if (p_index > this->m_NbDElements || p_index < 0)
@@ -99,10 +131,6 @@ public:
 		--this->m_NbDElements;
 	}
 
-	std::string afficherListe()
-	{
-
-	}
 
 	Liste<TypeElement> operator=(const Liste<TypeElement>& p_listeACopier)
 	{
@@ -127,8 +155,10 @@ public:
 
 	template <class TypeElement> friend Liste<TypeElement> operator+(const Liste<TypeElement>& p_Liste1, const Liste<TypeElement>& p_Liste2);
 	template <class TypeElement> friend Liste<TypeElement> operator+(const Liste<TypeElement>& p_Liste, const TypeElement& p_TypeDeLaListe);
-	template <class TypeElement> friend Liste<TypeElement>& operator+=(const Liste<TypeElement>& p_Liste, const TypeElement& p_TypeDeLaListe);
-	template <class TypeElement> friend Liste<TypeElement>& operator+=(const Liste<TypeElement>& p_Liste1, const Liste<TypeElement>& p_Liste2);
+	template <class TypeElement> friend Liste<TypeElement>& operator+=(Liste<TypeElement>& p_Liste, const TypeElement& p_TypeDeLaListe);
+	template <class TypeElement> friend Liste<TypeElement>& operator+=(Liste<TypeElement>& p_Liste1, const Liste<TypeElement>& p_Liste2);
+	template <class TypeElement> friend bool operator==(const Liste<TypeElement>& p_Liste1, const Liste<TypeElement>& p_Liste2);
+	template <class TypeElement> friend bool operator!=(const Liste<TypeElement>& p_Liste1, const Liste<TypeElement>& p_Liste2);
 	template <class TypeElement> friend std::ostream& operator<<(std::ostream& p_ostream, const Liste<TypeElement>& p_liste);
 
 private:

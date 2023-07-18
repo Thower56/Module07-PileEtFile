@@ -1,16 +1,13 @@
 ﻿  Main.cpp
-C:\Users\charl\OneDrive\Documents\GitHub\DemoGitHubDesktop-Charles\Module07-PileEtFile\Module07-PileEtFile\File.h(49,1): warning C4267: 'argument' : conversion de 'size_t' en 'const int', perte possible de données
-C:\Users\charl\OneDrive\Documents\GitHub\DemoGitHubDesktop-Charles\Module07-PileEtFile\Module07-PileEtFile\File.h(45,1): message : pendant la compilation de la fonction membre classe modèle 'void File<int>::enfiler(TypeElement)'
-          with
-          [
-              TypeElement=int
-          ]
-C:\Users\charl\OneDrive\Documents\GitHub\DemoGitHubDesktop-Charles\Module07-PileEtFile\Module07-PileEtFile\Main.cpp(25,19): message : voir la référence à l'instanciation de la fonction modèle 'void File<int>::enfiler(TypeElement)' en cours de compilation
-          with
-          [
-              TypeElement=int
-          ]
-C:\Users\charl\OneDrive\Documents\GitHub\DemoGitHubDesktop-Charles\Module07-PileEtFile\Module07-PileEtFile\Main.cpp(24,15): message : voir la référence à l'instanciation classe modèle 'File<int>' en cours de compilation
-C:\Users\charl\OneDrive\Documents\GitHub\DemoGitHubDesktop-Charles\Module07-PileEtFile\Module07-PileEtFile\File.h(49,1): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
-C:\Users\charl\OneDrive\Documents\GitHub\DemoGitHubDesktop-Charles\Module07-PileEtFile\Module07-PileEtFile\OperateurUtile.h(49): warning C4172: retourne l'adresse d'une variable locale ou : futureListe temporaire
-  Module07-PileEtFile.vcxproj -> C:\Users\charl\OneDrive\Documents\GitHub\DemoGitHubDesktop-Charles\Module07-PileEtFile\x64\Debug\Module07-PileEtFile.exe
+C:\Session3\Algo\Module07-PileEtFile\Module07-PileEtFile\Pile.h(18,1): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Session3\Algo\Module07-PileEtFile\Module07-PileEtFile\Pile.h(15,1): message : while compiling class template member function 'Pile<double>::~Pile(void)'
+C:\Session3\Algo\Module07-PileEtFile\Module07-PileEtFile\Main.cpp(28,18): message : see reference to function template instantiation 'Pile<double>::~Pile(void)' being compiled
+C:\Session3\Algo\Module07-PileEtFile\Module07-PileEtFile\Main.cpp(28,18): message : see reference to class template instantiation 'Pile<double>' being compiled
+C:\Session3\Algo\Module07-PileEtFile\Module07-PileEtFile\Pile.h(19,1): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Session3\Algo\Module07-PileEtFile\Module07-PileEtFile\Pile.h(20,1): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+C:\Session3\Algo\Module07-PileEtFile\Module07-PileEtFile\OperateurUtile.h(170,1): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Session3\Algo\Module07-PileEtFile\Module07-PileEtFile\Main.cpp(69,31): message : see reference to function template instantiation 'File<int> operator ~<int>(const File<int> &)' being compiled
+C:\Session3\Algo\Module07-PileEtFile\Module07-PileEtFile\OperateurUtile.h(64,1): warning C4267: 'argument': conversion from 'size_t' to 'const int', possible loss of data
+C:\Session3\Algo\Module07-PileEtFile\Module07-PileEtFile\OperateurUtile.h(219,1): message : see reference to function template instantiation 'bool operator ==<int>(const Liste<int> &,const Liste<int> &)' being compiled
+C:\Session3\Algo\Module07-PileEtFile\Module07-PileEtFile\Main.cpp(65,25): message : see reference to function template instantiation 'bool operator ==<int>(const File<int> &,const File<int> &)' being compiled
+  Module07-PileEtFile.vcxproj -> C:\Session3\Algo\Module07-PileEtFile\x64\Debug\Module07-PileEtFile.exe
