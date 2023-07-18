@@ -1,0 +1,16 @@
+﻿  Main.cpp
+C:\Users\charl\OneDrive\Documents\GitHub\DemoGitHubDesktop-Charles\Module07-PileEtFile\Module07-PileEtFile\File.h(49,1): warning C4267: 'argument' : conversion de 'size_t' en 'const int', perte possible de données
+C:\Users\charl\OneDrive\Documents\GitHub\DemoGitHubDesktop-Charles\Module07-PileEtFile\Module07-PileEtFile\File.h(45,1): message : pendant la compilation de la fonction membre classe modèle 'void File<int>::enfiler(TypeElement)'
+          with
+          [
+              TypeElement=int
+          ]
+C:\Users\charl\OneDrive\Documents\GitHub\DemoGitHubDesktop-Charles\Module07-PileEtFile\Module07-PileEtFile\Main.cpp(25,19): message : voir la référence à l'instanciation de la fonction modèle 'void File<int>::enfiler(TypeElement)' en cours de compilation
+          with
+          [
+              TypeElement=int
+          ]
+C:\Users\charl\OneDrive\Documents\GitHub\DemoGitHubDesktop-Charles\Module07-PileEtFile\Module07-PileEtFile\Main.cpp(24,15): message : voir la référence à l'instanciation classe modèle 'File<int>' en cours de compilation
+C:\Users\charl\OneDrive\Documents\GitHub\DemoGitHubDesktop-Charles\Module07-PileEtFile\Module07-PileEtFile\File.h(49,1): warning C4267: 'argument' : conversion de 'size_t' en 'int', perte possible de données
+C:\Users\charl\OneDrive\Documents\GitHub\DemoGitHubDesktop-Charles\Module07-PileEtFile\Module07-PileEtFile\OperateurUtile.h(49): warning C4172: retourne l'adresse d'une variable locale ou : futureListe temporaire
+  Module07-PileEtFile.vcxproj -> C:\Users\charl\OneDrive\Documents\GitHub\DemoGitHubDesktop-Charles\Module07-PileEtFile\x64\Debug\Module07-PileEtFile.exe
