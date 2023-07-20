@@ -22,6 +22,11 @@ public:
 		}
 	}
 
+	TypeElement obtenir(int p_index) const
+	{
+		return m_Liste.obtenir(p_index);
+	}
+
 	Liste<TypeElement> InversePile()
 	{
 		
@@ -40,12 +45,12 @@ public:
 
 	TypeElement depiler() 
 	{
-		if (this->m_Liste.nombreElements == 0)
+		if (m_Liste.nombreElements() == 0)
 		{
 			std::invalid_argument("Pile vide");
 		}
-		int index = this->m_Liste.nombreElements -1;
-		TypeElement elementRecent = m_Liste[index];
+		int index = this->m_Liste.nombreElements() - 1;
+		TypeElement elementRecent = m_Liste.obtenir(index);
 		this->m_Liste.supprimerFin();
 		return elementRecent;
 	}
@@ -62,13 +67,12 @@ public:
 
 	bool estPileVide()
 	{
-		return this->m_Liste.nombreElements == 0;
+		return this->m_Liste.nombreElements() == 0;
 	}
 	int taille()
 	{
-		return this->m_Liste.nombreElements;
+		return this->m_Liste.nombreElements();
 	}
-
 
 	template <class TypeElement> friend Pile<TypeElement> operator+(const Pile<TypeElement>& p_pile1, const Pile<TypeElement>& p_pile2);
 	template <class TypeElement> friend Pile<TypeElement> operator+(const Pile<TypeElement>& p_pile, const TypeElement& p_TypeElement);

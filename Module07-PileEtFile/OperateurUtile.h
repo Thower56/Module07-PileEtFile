@@ -6,17 +6,14 @@
 template <class TypeElement>
 std::ostream& operator<<(std::ostream& p_ostream, const Liste<TypeElement>& p_liste)
 {
-	p_ostream << "Liste: ( ";
-
 	for (int i = 0; i < p_liste.nombreElements(); i++)
 	{
 		p_ostream << p_liste.m_valeurs[i];
-		p_ostream << " ";
 	}
-	p_ostream << ")" << std::endl;
 
 	return p_ostream;
 }
+
 
 template <class TypeElement>
 Liste<TypeElement> operator+(const Liste<TypeElement>& p_Liste1, const Liste<TypeElement>& p_Liste2)
@@ -80,6 +77,7 @@ bool operator!=(const Liste<TypeElement>& p_Liste1, const Liste<TypeElement>& p_
 	}
 	return pareil;
 };
+
 
 /***************************************[ PILE ]*****************************************************************************/
 

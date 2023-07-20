@@ -4,8 +4,34 @@
 #include "Liste.h"
 #include "OperateurUtile.h"
 #include "Pile.h"
+#include "Methodes.h"
+
 
 int main()
+{
+    
+    Pile<char> pileChar;
+
+    std::string test = "(([])([)({}))";
+    
+    for (size_t i = 0; i < test.length(); i++)
+    {
+        pileChar.empiler(test[i]);
+    }
+    std::cout << pileChar << std::endl;
+    bool testBool = CorrectementImbriquiee(pileChar);
+    std::cout << testBool << std::endl;
+
+
+
+
+
+
+
+    return 0;
+}
+
+void DemoPileEtFile()
 {
     std::cout << "***************[Liste]********************" << std::endl;
     Liste<int> liste;
@@ -41,7 +67,12 @@ int main()
     std::cout << "Pile = Pile2 + Pile3 : " << liste333 << std::endl;
 
     liste3 += liste33;
-    std::cout <<"Pile += Pile2 : " << liste3 << std::endl;
+    std::cout << "Pile += Pile2 : " << liste3 << std::endl;
+
+    if (liste3 == liste333)
+    {
+        std::cout << "Pile Pareil" << std::endl;
+    }
 
     std::cout << "***************[File]********************" << std::endl;
     File<int> liste4;
@@ -60,7 +91,7 @@ int main()
     std::cout << "File = File2 + File3 : " << liste6 << std::endl;
 
     liste4 += liste5;
-    std::cout <<"File += File2 : " << liste4 << std::endl;
+    std::cout << "File += File2 : " << liste4 << std::endl;
 
     if (liste4 == liste6)
     {
@@ -68,5 +99,4 @@ int main()
     }
     File<int> liste7 = ~liste4;
     std::cout << liste7 << std::endl;
-    return 0;
 }
